@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HOME</title>
+</head>
+<body>
+  <h1>Bem-vindo à Página Inicial</h1>
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <p>Escolha uma opção:</p>
+  <ul>
+    <li>
+      <%= link_to "USUARIO", user_page_path %>
+    </li>
+    <li>
+      <%= link_to "NOTICIAS", noticias_page_path %>
+    </li>
+    <li>
+      <%= link_to "RUBY", ruby_page_path %>
+    </li>
+    <li>
+      <%= link_to "RAILS", rails_page_path %>
+    </li>
+  </ul>
+</body>
+</html>

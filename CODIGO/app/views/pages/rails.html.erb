@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rails - Exemplos de Código</title>
+  <!-- Importando MaterializeCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Importando Highlight.js para destacar o código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="center-align">Rails - Exemplos de Código</h1>
+    <div class="row">
+      <div class="col s12">
+        <!-- Exemplo 1: Gerar um novo controlador -->
+        <div class="card-panel">
+          <h5>Exemplo 1: Gerar um novo controlador</h5>
+          <pre><code class="ruby">
+            rails generate controller Welcome index
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(1)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+        
+        <!-- Exemplo 2: Criar uma migração -->
+        <div class="card-panel">
+          <h5>Exemplo 2: Criar uma migração</h5>
+          <pre><code class="ruby">
+            rails generate migration CreateProducts name:string description:text
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(2)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 3: Rodar migrações -->
+        <div class="card-panel">
+          <h5>Exemplo 3: Rodar migrações</h5>
+          <pre><code class="ruby">
+            rails db:migrate
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(3)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 4: Criar uma rota -->
+        <div class="card-panel">
+          <h5>Exemplo 4: Criar uma rota</h5>
+          <pre><code class="ruby">
+            get 'home', to: 'welcome#index'
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(4)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 5: Criar uma view -->
+        <div class="card-panel">
+          <h5>Exemplo 5: Criar uma view</h5>
+          <pre><code class="ruby">
+            &lt;h1&gt;Hello, Rails!&lt;/h1&gt;
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(5)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Adicione mais exemplos de código conforme necessário -->
+
+        <!-- Botão de Voltar -->
+        <a href="/" class="waves-effect waves-light btn">Voltar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Importando jQuery (necessário para o MaterializeCSS) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Importando MaterializeJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Importando Highlight.js para destacar o código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <!-- Inicializando os componentes do MaterializeJS -->
+  <script>
+    $(document).ready(function(){
+      M.AutoInit();
+      hljs.initHighlightingOnLoad();
+    });
+
+    // Função para copiar o código
+    function copyCode(exampleNumber) {
+      var textArea = document.createElement("textarea");
+      textArea.value = $("pre:nth-child(" + exampleNumber + ") code").text();
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("Copy");
+      textArea.remove();
+      M.toast({html: 'Código copiado!', classes: 'rounded'});
+    }
+  </script>
+</body>
+</html>

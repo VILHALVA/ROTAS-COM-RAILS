@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby - Exemplos de Código</title>
+  <!-- Importando MaterializeCSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Importando Highlight.js para destacar o código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="center-align">Ruby - Exemplos de Código</h1>
+    <div class="row">
+      <div class="col s12">
+        <!-- Exemplo 1: Hello World -->
+        <div class="card-panel">
+          <h5>Exemplo 1: Hello World</h5>
+          <pre><code class="ruby">
+            puts "Hello, world!"
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(1)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+        
+        <!-- Exemplo 2: Variáveis -->
+        <div class="card-panel">
+          <h5>Exemplo 2: Variáveis</h5>
+          <pre><code class="ruby">
+            nome = "João"
+            idade = 30
+            saldo = 1000.50
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(2)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 3: Condicionais -->
+        <div class="card-panel">
+          <h5>Exemplo 3: Condicionais</h5>
+          <pre><code class="ruby">
+            if saldo > 1000
+            puts "Saldo elevado"
+            else
+            puts "Saldo baixo"
+            end
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(3)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 4: Loops -->
+        <div class="card-panel">
+          <h5>Exemplo 4: Loops</h5>
+          <pre><code class="ruby">
+            5.times do |i|
+            puts "Contagem: #{i+1}"
+            end
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(4)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 5: Variáveis compostas -->
+        <div class="card-panel">
+          <h5>Exemplo 5: Variáveis compostas</h5>
+          <pre><code class="ruby">
+            nomes = ["João", "Maria", "Carlos"]
+            idades = { "João" => 30, "Maria" => 25, "Carlos" => 35 }
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(5)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 6: Funções -->
+        <div class="card-panel">
+          <h5>Exemplo 6: Funções</h5>
+          <pre><code class="ruby">
+            def soma(a, b)
+            return a + b
+            end
+
+            puts soma(5, 3) # Saída: 8
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(6)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+
+        <!-- Exemplo 7: Classe POO -->
+        <div class="card-panel">
+          <h5>Exemplo 7: Classe POO</h5>
+          <pre><code class="ruby">
+            class Pessoa
+            attr_accessor :nome, :idade
+            
+            def initialize(nome, idade)
+                @nome = nome
+                @idade = idade
+            end
+
+            def apresentar
+                puts "Olá, meu nome é #{@nome} e tenho #{@idade} anos."
+            end
+            end
+
+            p1 = Pessoa.new("João", 30)
+            p1.apresentar # Saída: Olá, meu nome é João e tenho 30 anos.
+          </code></pre>
+          <a class="waves-effect waves-light btn-small" onclick="copyCode(7)"><i class="material-icons left">file_copy</i>Copiar</a>
+        </div>
+        
+        <!-- Adicione mais exemplos de código conforme necessário -->
+
+        <!-- Botão de Voltar -->
+        <a href="/" class="waves-effect waves-light btn">Voltar</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Importando jQuery (necessário para o MaterializeCSS) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Importando MaterializeJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Importando Highlight.js para destacar o código -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <!-- Inicializando os componentes do MaterializeJS -->
+  <script>
+    $(document).ready(function(){
+      M.AutoInit();
+      hljs.initHighlightingOnLoad();
+    });
+
+    // Função para copiar o código
+    function copyCode(exampleNumber) {
+      var textArea = document.createElement("textarea");
+      textArea.value = $("pre:nth-child(" + exampleNumber + ") code").text();
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("Copy");
+      textArea.remove();
+      M.toast({html: 'Código copiado!', classes: 'rounded'});
+    }
+  </script>
+</body>
+</html>
