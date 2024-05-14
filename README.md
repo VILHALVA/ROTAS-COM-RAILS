@@ -43,7 +43,7 @@
    ```
 
 3. **Acesso à Aplicação:** 
-   Após iniciar o servidor Rails localmente, você pode acessar a aplicação através do navegador digitando `[http://localhost:3000](http://localhost:3000)`.
+   Após iniciar o servidor Rails localmente, você pode acessar a aplicação através do navegador digitando [http://localhost:3000](http://localhost:3000).
 
 4. **Navegação:** 
    Na página inicial, você encontrará links para as diferentes seções do aplicativo. Clique em um link (Botão) para acessar a página desejada.
